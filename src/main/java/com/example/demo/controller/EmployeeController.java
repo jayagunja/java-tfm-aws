@@ -23,4 +23,9 @@ public class EmployeeController {
     public List<Employee> getAll() {
         return repository.findAll();
     }
+   @GetMapping("/hello")
+    public String getHelloWorld() {
+        return "Hello World";
+    }
+
 }
