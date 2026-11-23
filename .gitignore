@@ -1,0 +1,11 @@
+# Terraform generated files
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Java generated files
+**/target/
+
+# IDE
+.idea/
+.vscode/
