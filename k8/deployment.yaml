@@ -1,8 +1,14 @@
 
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: java-app-ns
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: java-app-deployment
+  namespace: java-app-ns
   labels:
     app: java-app
 
@@ -35,11 +41,13 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: java-app-service
+  namespace: java-app-ns
 
 spec:
   type: NodePort
